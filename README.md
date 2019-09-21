@@ -2,7 +2,7 @@
 
 A tool that lets you randomize all loot tables in Minecraft 1.14.
 
-# Requirements
+## Requirements
 
 The tool requires python to be installed in order to run.   
 Loot tables for 1.14 are included in the repository.
