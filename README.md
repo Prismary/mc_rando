@@ -7,6 +7,16 @@ A tool that lets you randomize all loot tables in Minecraft 1.14.
 The tool requires python to be installed in order to run.   
 Loot tables for 1.14 are included in the repository.
 
+## Usage
+
+The script can be used in two ways:
+
+* **User Interface:**
+  Simply execute `randomizer.py`. You will be able to input a seed or use a random seed.
+* **Arguments:**
+  Run the command  `python randomizer.py <seed>`.
+  The argument `<seed>` can either be a seed as an integer or `r` for a random seed.
+
 ## Credit
 
 This is a fork of SethBling's loot table randomizer.
