@@ -5,12 +5,19 @@ import zipfile
 import json
 import sys
 
+def namedesc(seed):
+	nameprefix = 'randomizer'
+	descprefix = 'Data Randomizer'
+	if seed == 'r':
+		return nameprefix, descprefix
+	else:
+		return nameprefix+'_{}'.format(seed), descprefix+', Seed: {}'.format(seed)
+
 print("  __  __  ___   ___              _     \n |  \/  |/ __| | _ \__ _ _ _  __| |___ \n | |\/| | (__  |   / _` | ' \/ _` / _ \\\n |_|  |_|\___| |_|_\__,_|_||_\__,_\___/\n")
 
 if len(sys.argv) >= 2:
 	if str(sys.argv[1]) == 'r':
-		datapack_name = 'random_loot'
-		datapack_desc = 'Loot Table Randomizer'
+		datapack_name, datapack_desc = namedesc('r')
 	else:
 		print('[i] Using seed provided in arguments.')
 		try:
@@ -18,8 +25,7 @@ if len(sys.argv) >= 2:
 		except:
 			print('[!] Failed to convert input into an integer.')
 			exit()
-		datapack_name = 'random_loot_{}'.format(seed)
-		datapack_desc = 'Loot Table Randomizer, Seed: {}'.format(seed)
+		datapack_name, datapack_desc = namedesc(seed)
 		random.seed(seed)
 else:
 	while True:
@@ -30,13 +36,11 @@ else:
 			except:
 				print('[!] Failed to convert input into an integer.\n')
 				continue
-			datapack_name = 'random_loot_{}'.format(seed)
-			datapack_desc = 'Loot Table Randomizer, Seed: {}'.format(seed)
+			datapack_name, datapack_desc = namedesc(seed)
 			random.seed(seed)
 			break
 		else:
-			datapack_name = 'random_loot'
-			datapack_desc = 'Loot Table Randomizer'
+			datapack_name, datapack_desc = namedesc('r')
 			break
 
 datapack_filename = datapack_name + '.zip'
