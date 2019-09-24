@@ -25,6 +25,11 @@
           ],
           "name": "minecraft:blaze_rod"
         }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:killed_by_player"
+        }
       ]
     }
   ]
