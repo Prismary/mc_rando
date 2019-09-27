@@ -1,0 +1,3 @@
+sanity: none
+
+end - ender_pearl, blaze_rod
